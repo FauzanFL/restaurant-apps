@@ -11,7 +11,7 @@ if (!fs.existsSync(destination)) {
 
 fs.readdirSync(target).forEach((image) => {
   const extention = image.slice(
-    (Math.max(0, image.lastIndexOf('.')) || Infinity) + 1
+    (Math.max(0, image.lastIndexOf('.')) || Infinity) + 1,
   );
   // mengubah ukuran gambar dengan lebar 800px, dengan prefix -large.jpg
   sharp(`${target}/${image}`)
@@ -22,8 +22,8 @@ fs.readdirSync(target).forEach((image) => {
         `${destination}/${image
           .split('.')
           .slice(0, -1)
-          .join('.')}-large.${extention}`
-      )
+          .join('.')}-large.${extention}`,
+      ),
     );
 
   // mengubah ukuran gambar dengan lebar 480px, dengan prefix -nedium.jpg
@@ -35,8 +35,8 @@ fs.readdirSync(target).forEach((image) => {
         `${destination}/${image
           .split('.')
           .slice(0, -1)
-          .join('.')}-medium.${extention}`
-      )
+          .join('.')}-medium.${extention}`,
+      ),
     );
 
   // mengubah ukuran gambar dengan lebar 480px, dengan prefix -small.jpg
@@ -48,7 +48,7 @@ fs.readdirSync(target).forEach((image) => {
         `${destination}/${image
           .split('.')
           .slice(0, -1)
-          .join('.')}-small.${extention}`
-      )
+          .join('.')}-small.${extention}`,
+      ),
     );
 });
