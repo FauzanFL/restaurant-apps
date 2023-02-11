@@ -19,10 +19,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Build image
-        run: |
-          npm run build-image
       - name: Run Automated Test
         run: |
           npm install
           npm run test
+      - name: Build image
+        run: |
+          npm run build-image
