@@ -71,7 +71,9 @@ module.exports = {
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
     }),
-    new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'json',
+    }),
     new CompressionPlugin({
       filename: '[path][base].gz',
       algorithm: 'gzip',
